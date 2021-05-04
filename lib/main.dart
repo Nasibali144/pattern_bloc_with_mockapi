@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pattern_bloc_with_mockapi/blocs/list_contact_cubit.dart';
 import 'package:pattern_bloc_with_mockapi/pages/home_page.dart';
 
+import 'blocs/create_contact_cubit.dart';
+
 void main() {
   runApp(MyApp());
 }

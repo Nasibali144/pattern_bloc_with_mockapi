@@ -11,18 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isLoading = false;
   List<Contact> items = [];
-
-  // Future apiCreateContact() async {
-  //   String response = await Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePage()));
-  //   if(response != null) apiListContact();
-  // }
-  //
-  // Future apiUpdateContact(Contact contact) async {
-  //   String response = await Navigator.push(context, MaterialPageRoute(builder: (context) => UpdatePage(contact: contact,)));
-  //   if(response != null) apiListContact();
-  // }
 
   @override
   void initState() {
@@ -53,7 +42,9 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
-        //onPressed: apiCreateContact,
+        onPressed: () {
+          BlocProvider.of<ListContactCubit>(context).apiCreateContact(context);
+        },
       ),
     );
   }

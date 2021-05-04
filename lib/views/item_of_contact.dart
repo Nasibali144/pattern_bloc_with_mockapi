@@ -27,7 +27,7 @@ Widget itemOfList({BuildContext context, Contact contact}) {
         color: Colors.indigo,
         icon: Icons.edit,
         onTap: () {
-          //apiUpdateContact(contact);
+          BlocProvider.of<ListContactCubit>(context).apiUpdateContact(context, contact);
         },
       ),
     ],
